@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDark"
+    tools:context=".Splash">
+
+    <ImageView
+        android:id="@+id/AnimiranLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ezcalendar"
+        />
+
+    <TextView
+        android:id="@+id/ezcalc"
+        style="@style/shadoweffect"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_marginBottom="92dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="A simple to use task manager"
+        android:textColor="@color/secondaryDark"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/AnimiranLogo"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/skipButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
