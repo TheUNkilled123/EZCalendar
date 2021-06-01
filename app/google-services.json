@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "825564352896",
+    "project_id": "ezcalendar-61232",
+    "storage_bucket": "ezcalendar-61232.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825564352896:android:11aff52ec01bcdbc7e7165",
+        "android_client_info": {
+          "package_name": "com.example.ezcalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825564352896-jldo1mn9ao6apf9g5d97ta5e9l4u6j00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ezcalendar",
+            "certificate_hash": "767099cefaf65fbdcde53c72760b086e0610d961"
+          }
+        },
+        {
+          "client_id": "825564352896-h0bm1p84oqfue5d1tp793a0ue46uhfrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjeaBXqA7w26zzh5muTR3HkdPxUDGL7rA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825564352896-h0bm1p84oqfue5d1tp793a0ue46uhfrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
