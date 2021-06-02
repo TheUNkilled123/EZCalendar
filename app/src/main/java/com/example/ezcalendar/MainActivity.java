@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
@@ -57,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
         baton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cal.set(Calendar.SECOND, 1);
+                cal.set(Calendar.MILLISECOND, 0);
+                cal.set(Calendar.HOUR_OF_DAY, 0);
+                cal.set(Calendar.MINUTE, 0);
+
+                cal1.setTime(cal.getTime());
+                cal1.add(cal1.DATE,1); Log.d("TESTINGMOMSAODMOASMDOASMDOASMD", String.valueOf(cal1.getTime())); Log.d("TESTINGMOMSAODMOASMDOASMDOASMD", String.valueOf(cal.getTime()));
+
+
                 Map<String, Object> event = new HashMap<>();
                 event.put("date", newDate);
                 event.put("eventTitle", "Zubar");
@@ -77,22 +87,18 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
 
-                cal.set(Calendar.SECOND, 1);
-                cal.set(Calendar.MILLISECOND, 0);
-                cal.set(Calendar.HOUR_OF_DAY, 0);
-                cal.set(Calendar.MINUTE, 0);
-
-                cal1.setTime(cal.getTime());
-                cal1.add(cal1.DATE,1); Log.d("TESTINGMOMSAODMOASMDOASMDOASMD", String.valueOf(cal1.getTime())); Log.d("TESTINGMOMSAODMOASMDOASMDOASMD", String.valueOf(cal.getTime()));
 
                 db.collection("events")
-                        .whereLessThan("date",cal1.getTime())
-                        .whereGreaterThan("date",cal.getTime())
+                        //
                         .get()
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
-                                    Log.d("OUTPUT", document.getId() + " => " + document.getData());
+                                    Timestamp ts1= (Timestamp) document.getData().get("date");
+
+                                    if(ts1.getSeconds() >= cal.getTimeInMillis()/1000 && ts1.getSeconds() <= cal1.getTimeInMillis()/1000){
+                                        Log.d("OUTPUT", document.getId() + " => " + ts1.getSeconds());
+                                    }
                                 }
                             } else {
                                 Log.w("OUTPUT", "Error getting documents.", task.getException());
