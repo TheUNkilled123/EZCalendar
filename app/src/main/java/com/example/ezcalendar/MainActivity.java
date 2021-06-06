@@ -3,24 +3,29 @@ package com.example.ezcalendar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
+import android.widget.ListView;
+import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.SimpleDateFormat;
+
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -45,6 +50,31 @@ public class MainActivity extends AppCompatActivity {
 
         CalendarView calView = findViewById(R.id.calendarView);
         ExtendedFloatingActionButton baton = findViewById(R.id.addEvent);
+        ListView lv = findViewById(R.id.listView);
+        ArrayList<String> dataList = new ArrayList<String>();
+        calView.setDate(cal.getTimeInMillis());
+
+        //ArrayList adapter for ListView
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, dataList){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent){
+                // Get the Item from ListView
+                View view = super.getView(position, convertView, parent);
+
+                // Initialize a TextView for ListView each Item
+                TextView tv = (TextView) view.findViewById(android.R.id.text1);
+                // Set the text color of TextView (ListView Item)
+                tv.setMaxWidth(200);
+                tv.setTextColor(Color.BLACK);
+                tv.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+                tv.setAutoSizeTextTypeUniformWithConfiguration(1, 22, 1, TypedValue.COMPLEX_UNIT_DIP);
+
+                // Generate ListView Item using TextView
+                return view;
+            }
+        };
+        lv.setDividerHeight(20);
+        lv.setAdapter(listAdapter);
 
         //Fires when date changed in the calendar
         calView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
@@ -52,6 +82,34 @@ public class MainActivity extends AppCompatActivity {
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 cal.set(year, month, dayOfMonth);
                 newDate = cal.getTime();
+                dataList.clear();
+                listAdapter.notifyDataSetChanged();
+                //Get data from FireStore
+                cal.set(Calendar.SECOND, 1);
+                cal.set(Calendar.MILLISECOND, 0);
+                cal.set(Calendar.HOUR_OF_DAY, 0);
+                cal.set(Calendar.MINUTE, 0);
+
+                cal1.setTime(cal.getTime());
+                cal1.add(cal1.DATE,1);
+                db.collection("events")
+                        .get()
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    Timestamp ts1= (Timestamp) document.getData().get("date");
+                                    if(ts1.getSeconds() >= cal.getTimeInMillis()/1000 && ts1.getSeconds() <= cal1.getTimeInMillis()/1000){
+                                        String titleValue = (String) document.getData().get("eventTitle");
+                                        Log.d("fuckYou",titleValue);
+                                        dataList.add(titleValue);
+                                    }
+                                }
+                                listAdapter.notifyDataSetChanged();
+                            } else {
+                                Log.w("OUTPUT", "Error getting documents.", task.getException());
+                            }
+                        });
+
             }});
 
 
