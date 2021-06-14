@@ -3,12 +3,14 @@ package com.example.ezcalendar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.ListView;
@@ -60,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             public View getView(int position, View convertView, ViewGroup parent){
                 // Get the Item from ListView
                 View view = super.getView(position, convertView, parent);
-
                 // Initialize a TextView for ListView each Item
                 TextView tv = (TextView) view.findViewById(android.R.id.text1);
                 // Set the text color of TextView (ListView Item)
@@ -68,6 +69,31 @@ public class MainActivity extends AppCompatActivity {
                 tv.setTextColor(Color.BLACK);
                 tv.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
                 tv.setAutoSizeTextTypeUniformWithConfiguration(1, 22, 1, TypedValue.COMPLEX_UNIT_DIP);
+                tv.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(),EventDesc.class);
+                        db.collection("events")
+                                .get()
+                                .addOnCompleteListener(task -> {
+                                    if (task.isSuccessful()) {
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
+                                            if(((String) tv.getText()).equals((String) document.get("eventTitle"))){
+                                                intent.putExtra("desc",(String) document.get("eventDesc"));
+                                                intent.putExtra("title",(String) tv.getText());
+                                                Timestamp datetemp = (Timestamp) document.get("dateCreated");
+                                                intent.putExtra("time", datetemp.toDate().toString());
+                                                startActivity(intent);
+                                                break;
+                                            }
+                                        }
+                                    } else {
+                                        Log.w("OUTPUT", "Error getting documents.", task.getException());
+                                    }
+                                });
+
+                    }
+                });
 
                 // Generate ListView Item using TextView
                 return view;
@@ -112,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
             }});
 
-
         baton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 event.put("date", newDate);
                 event.put("eventTitle", "Zubar");
                 event.put("eventDesc", "Kao nesto moras kod zubara ali samo ako te boli zub ili nesto test droime skaldjasdjaksjdkasjd.");
+                event.put("dateCreated", Calendar.getInstance().getTime());
 
                 db.collection("events")
                         .add(event)
