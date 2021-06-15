@@ -1,18 +1,17 @@
 package com.example.ezcalendar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ButtonBarLayout;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
-import android.view.Menu;
-import android.view.ViewDebug;
-import android.view.WindowManager;
 
-import java.util.ArrayList;
+import android.view.WindowManager;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

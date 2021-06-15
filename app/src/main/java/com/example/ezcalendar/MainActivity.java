@@ -16,6 +16,11 @@ import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -35,29 +40,41 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int ACTIVITY_REQUEST_CODE = 0;
 
     Calendar cal = Calendar.getInstance();
     Calendar cal1 = Calendar.getInstance();
     Date newDate = cal.getTime();
+
+    FirebaseFirestore db;
+    ListView lv;
+    ArrayList<String> dataList;
+    ArrayAdapter<String> listAdapter;
+    AdView adView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setPersistenceEnabled(false)
                 .build();
         db.setFirestoreSettings(settings);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CalendarView calView = findViewById(R.id.calendarView);
-        ExtendedFloatingActionButton baton = findViewById(R.id.addEvent);
-        ListView lv = findViewById(R.id.listView);
-        ArrayList<String> dataList = new ArrayList<String>();
-        calView.setDate(cal.getTimeInMillis());
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
-        //ArrayList adapter for ListView
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, dataList){
+        lv = findViewById(R.id.listView);
+        dataList = new ArrayList<String>();
+        //Array adapter za ListView događaja
+        listAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, dataList){
             @Override
             public View getView(int position, View convertView, ViewGroup parent){
                 // Get the Item from ListView
@@ -102,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
         lv.setDividerHeight(20);
         lv.setAdapter(listAdapter);
 
+        CalendarView calView = findViewById(R.id.calendarView);
+        ExtendedFloatingActionButton baton = findViewById(R.id.addEvent);
+        calView.setDate(cal.getTimeInMillis());
+
         //Fires when date changed in the calendar
         calView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
@@ -126,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
                                     Timestamp ts1= (Timestamp) document.getData().get("date");
                                     if(ts1.getSeconds() >= cal.getTimeInMillis()/1000 && ts1.getSeconds() <= cal1.getTimeInMillis()/1000){
                                         String titleValue = (String) document.getData().get("eventTitle");
-                                        Log.d("fuckYou",titleValue);
                                         dataList.add(titleValue);
                                     }
                                 }
@@ -141,19 +161,39 @@ public class MainActivity extends AppCompatActivity {
         baton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent getDataIntent = new Intent(getApplicationContext(), AddEvent.class);
+                startActivityForResult(getDataIntent, ACTIVITY_REQUEST_CODE);
+            }
+        });
+
+
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+
+                String titleString = data.getStringExtra("title");
+                String descString = data.getStringExtra("desc");
+
                 cal.set(Calendar.SECOND, 1);
                 cal.set(Calendar.MILLISECOND, 0);
                 cal.set(Calendar.HOUR_OF_DAY, 0);
                 cal.set(Calendar.MINUTE, 0);
 
                 cal1.setTime(cal.getTime());
-                cal1.add(cal1.DATE,1); Log.d("TESTINGMOMSAODMOASMDOASMDOASMD", String.valueOf(cal1.getTime())); Log.d("TESTINGMOMSAODMOASMDOASMDOASMD", String.valueOf(cal.getTime()));
-
+                cal1.add(cal1.DATE,1);
 
                 Map<String, Object> event = new HashMap<>();
                 event.put("date", newDate);
-                event.put("eventTitle", "Zubar");
-                event.put("eventDesc", "Kao nesto moras kod zubara ali samo ako te boli zub ili nesto test droime skaldjasdjaksjdkasjd.");
+                event.put("eventTitle", titleString);
+                event.put("eventDesc", descString);
                 event.put("dateCreated", Calendar.getInstance().getTime());
 
                 db.collection("events")
@@ -177,24 +217,20 @@ public class MainActivity extends AppCompatActivity {
                         .get()
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
+                                dataList.clear();
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Timestamp ts1= (Timestamp) document.getData().get("date");
-
                                     if(ts1.getSeconds() >= cal.getTimeInMillis()/1000 && ts1.getSeconds() <= cal1.getTimeInMillis()/1000){
-                                        Log.d("OUTPUT", document.getId() + " => " + ts1.getSeconds());
-                                    }
+                                        String titleValue = (String) document.getData().get("eventTitle");
+                                        dataList.add(titleValue);                                    }
                                 }
+                                listAdapter.notifyDataSetChanged();
                             } else {
                                 Log.w("OUTPUT", "Error getting documents.", task.getException());
                             }
                         });
-
             }
-        });
-
-
-
-
+        }
     }
 }
 

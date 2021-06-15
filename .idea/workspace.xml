@@ -30,14 +30,54 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="022adc1b-0039-45f8-8f22-bcbc69d07036" name="Default Changelist" comment="Data loading/storing backend completed.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ezcalendar/EventDesc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_event_desc.xml" afterDir="false" />
+    <list default="true" id="022adc1b-0039-45f8-8f22-bcbc69d07036" name="Default Changelist" comment="Event description viewer activity implemented.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_browser_browser_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_common_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_framework_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_work_work_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_20_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_base_20_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_lite_20_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_6_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_ump_user_messaging_platform_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_interop_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_19_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ezcalendar/AddEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_event.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/EZCalendar.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/EZCalendar.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ezcalendar/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ezcalendar/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ezcalendar/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ezcalendar/Splash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/style.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,15 +160,18 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="android.template.1957919916">
+      <recent name="com.example.ezcalendar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app\src\main\res\drawable" />
-      <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app" />
-      <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app\src\main\res\layout" />
     </key>
     <key name="android.template.-1715527214">
       <recent name="com.example.ezcalendar" />
@@ -136,8 +179,11 @@
     <key name="android.template.-32567246">
       <recent name="com.example.ezcalendar" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app\src\main\res\drawable" />
+      <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app" />
+      <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\tonij\AndroidStudioProjects\EZCalendar\app\src\main\res\layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -245,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623008544684</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Event description viewer activity implemented.">
+      <created>1623697031014</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623697031014</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,9 +317,18 @@
     <MESSAGE value="Initial" />
     <MESSAGE value="Implemented skippable splash screen." />
     <MESSAGE value="Data loading/storing backend completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Event description viewer activity implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Event description viewer activity implemented." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="269" key="#PSD" timestamp="1623782000161">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="269" key="#PSD/0.0.1920.1040@0.0.1920.1040" timestamp="1623782000161" />
+    <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1623778579212">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623778579212" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1620665191742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -291,48 +353,48 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="420" y="234" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1620197616720" />
-    <state width="913" height="193" key="GridCell.Tab.0.bottom" timestamp="1623696753602">
+    <state width="889" height="193" key="GridCell.Tab.0.bottom" timestamp="1623783539311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623696753602" />
-    <state width="913" height="193" key="GridCell.Tab.0.center" timestamp="1623696753602">
+    <state width="889" height="193" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539311" />
+    <state width="889" height="193" key="GridCell.Tab.0.center" timestamp="1623783539310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623696753602" />
-    <state width="913" height="193" key="GridCell.Tab.0.left" timestamp="1623696753602">
+    <state width="889" height="193" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539310" />
+    <state width="889" height="193" key="GridCell.Tab.0.left" timestamp="1623783539310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623696753602" />
-    <state width="913" height="193" key="GridCell.Tab.0.right" timestamp="1623696753602">
+    <state width="889" height="193" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539310" />
+    <state width="889" height="193" key="GridCell.Tab.0.right" timestamp="1623783539311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623696753602" />
-    <state width="913" height="193" key="GridCell.Tab.1.bottom" timestamp="1623696752101">
+    <state width="889" height="193" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539311" />
+    <state width="889" height="193" key="GridCell.Tab.1.bottom" timestamp="1623783539311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623696752101" />
-    <state width="913" height="193" key="GridCell.Tab.1.center" timestamp="1623696752101">
+    <state width="889" height="193" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539311" />
+    <state width="889" height="193" key="GridCell.Tab.1.center" timestamp="1623783539311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623696752101" />
-    <state width="913" height="193" key="GridCell.Tab.1.left" timestamp="1623696752100">
+    <state width="889" height="193" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539311" />
+    <state width="889" height="193" key="GridCell.Tab.1.left" timestamp="1623783539311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623696752100" />
-    <state width="913" height="193" key="GridCell.Tab.1.right" timestamp="1623696752101">
+    <state width="889" height="193" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539311" />
+    <state width="889" height="193" key="GridCell.Tab.1.right" timestamp="1623783539311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="193" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623696752101" />
-    <state x="122" y="138" width="998" height="716" key="SettingsEditor" timestamp="1620657425710">
+    <state width="889" height="193" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623783539311" />
+    <state x="56" y="116" width="998" height="716" key="SettingsEditor" timestamp="1623781985789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1620197269253" />
-    <state x="122" y="138" width="998" height="716" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620657425710" />
-    <state x="331" y="190" key="Vcs.Push.Dialog.v2" timestamp="1623008548107">
+    <state x="56" y="116" width="998" height="716" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623781985789" />
+    <state x="331" y="190" key="Vcs.Push.Dialog.v2" timestamp="1623697032365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="215" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1620198226428" />
-    <state x="331" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623008548107" />
+    <state x="331" y="190" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623697032365" />
     <state x="1256" y="309" key="chooseDestDirectoryDialog" timestamp="1620662683553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -341,11 +403,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="93" y="100" width="996" height="847" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620657722443" />
-    <state x="674" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623688486666">
+    <state x="674" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623776763796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="449" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1620197223224" />
-    <state x="674" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623688486666" />
+    <state x="674" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623776763796" />
     <state x="1146" y="119" width="585" height="801" key="find.popup" timestamp="1622564564710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
